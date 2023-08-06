@@ -3,6 +3,8 @@ const dotenv = require('dotenv').config();
 const connectToDB = require('./db')
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const productRoute = require('./routes/product');
+const cartRoute = require('./routes/cart');
 
 const app = express();
 
@@ -16,6 +18,8 @@ app.use(express.json());
 
 app.use('/api/auth', authRoute );
 app.use('/api/user', userRoute );
+app.use('/api/product', productRoute );
+app.use('/api/cart', cartRoute );
 
 
 app.listen(8000, ()=>{
