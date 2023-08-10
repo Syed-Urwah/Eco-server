@@ -5,6 +5,7 @@ const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
 const productRoute = require('./routes/product');
 const cartRoute = require('./routes/cart');
+const cors = require('cors');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get('/', ()=>{
     console.log("hello")
 })
 
+app.use(cors())
 app.use(express.json());
 
 app.use('/api/auth', authRoute );
